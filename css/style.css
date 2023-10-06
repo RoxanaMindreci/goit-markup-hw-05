@@ -11,7 +11,7 @@ body {
     --background-light-grey-color: #F5F4FA;
     --blue-hover-color: #188CE8;
     --black-color: #000000;
-
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .container {
     max-width: 100%;
@@ -77,8 +77,8 @@ img {
     padding-bottom: 30px;
 }
 .global-header a {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .nav-container {
     color: var(--font-dark-grey-color);
@@ -103,17 +103,19 @@ img {
     margin: 0;
 }
 .contact-container li {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 16px;
+    transition: color var(--transition), stroke var(--transition);
 }
 .contact-container li:hover,
 .contact-container li:focus {
     color: var(--blue-hover-color);
     stroke: var(--blue-hover-color);
+    cursor: pointer;
 }
 .contact-icon {
     width: 16px;
@@ -121,10 +123,14 @@ img {
     margin-right: 10px;
     display: inline;
 }
+.global-header .main-navigation li {
+    position: relative;
+}
 .global-header .main-navigation a {
     padding-top: 30px;
     padding-bottom: 30px;
     color: var(--font-dark-grey-color);
+    transition: color var(--transition);
 }
 .global-header .main-navigation li:visited {
  color: var(--font-dark-grey-color);
@@ -134,6 +140,7 @@ img {
 .global-header .main-navigation li a:hover,
  .global-header .main-navigation li a:focus {
     color: var(--blue-color);
+    cursor: pointer;
 }
 .global-header .main-navigation li a:active {
     color: var(--blue-color);
@@ -144,6 +151,16 @@ img {
 }
 .global-header .main-navigation .current {
     color: var(--blue-color);
+}
+.global-header .main-navigation .after-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--blue-hover-color);
+    bottom: -33px;
+    left: 0;
 }
 .request-section {
     background-repeat: no-repeat;
@@ -181,12 +198,14 @@ img {
     border-radius: 4px;
     line-height: 30px;
     padding: 10 19 10 20;
+    transition: background-color var(--transition), color var(--transition);
 }
 .request-section .request-button:hover,
 .request-section .request-button:focus,
 .request-section .request-button:active {
     background-color: var(--blue-hover-color);
     color: var(--background-white-color);
+    cursor: pointer;
 }
 
 h2 {
@@ -253,6 +272,17 @@ h3 {
 .what-we-do-icon {
     width: 64px;
 }
+.what-we-do-label {
+    position: absolute;
+    background: rgba(47, 48, 58, 0.8);
+    color: var(--background-white-color);
+    text-transform: uppercase;
+    width: 370px; 
+    text-align: center;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    bottom: 0;
+}
 .images-section {
     max-width: 100%;
     background-color: var(--background-white-color);
@@ -275,6 +305,7 @@ h3 {
     line-height: 1;
     padding: 0;
     display: block;
+    position: relative;
 }
 .our-team-section {
     background-color: var(--background-light-grey-color);
@@ -342,6 +373,7 @@ h3 {
     border-radius: 50px;
     background-color: var(--background-white-color);
     fill: #757575;
+    transition: background-color var(--transition), fill var(--transition), border var(--transition);
 }
 .our-team-social-item .social-icon:hover,
 .our-team-social-item .social-icon:focus {
@@ -350,6 +382,7 @@ h3 {
     border-radius: 50px;
     width: 44px;
     height: 44px;
+    cursor: pointer;
 }
 .our-team-social-item .social-icon {
     width: 44px;
@@ -383,6 +416,7 @@ h3 {
     border-radius: 4px;
     display: block;
     padding: 16px 32px;
+    transition: border var(--transition);
 }
 .regular-costumers-section .regular-costumers-container 
 .regular-costumers-list .regular-costumers-item:hover,
@@ -391,16 +425,19 @@ h3 {
     display: block;
     border: 1px solid rgba(33, 150, 243, 1);
     border-radius: 4px;
+    cursor: pointer;
 }
 .regular-costumers-image {
     width: 106px;
     height: 60px;
     fill: #afb1b8;
+    transition: fill var(--transition);
 }
 
 .regular-costumers-image:hover,
 .regular-costumers-image:focus {
     fill: var(--blue-hover-color);
+    cursor: pointer;
 }    
 .global-footer {
     background-color: var(--background-grey-color);
@@ -486,6 +523,7 @@ address {
    display: flex; 
    justify-content: center;
    align-items: center;
+   transition: background-color var(--transition), ;
 }
 .social-footer-icon {
     display: block;
@@ -504,6 +542,7 @@ address {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .portofolio-filter {
     display: flex;
@@ -545,6 +584,7 @@ address {
     background-color:var(--background-light-grey-color);
     border: 0;
     padding: 6px 22px;
+    transition: background-color var(--transition), box-shadow var(--transition);
 }
 .filter .filter-button:hover {
     background-color: var(--background-light-grey-color);
@@ -554,6 +594,7 @@ address {
     
     box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    cursor: pointer;
 }
 .filter .filter-button:focus,
  .filter .filter-button:active {
@@ -563,10 +604,30 @@ address {
     border-radius: 4px;
     box-shadow: none;
 }
-.filter-list .filter-card {
+.filter-list .filter-image {
+    position: relative;
     display: block;
     border: 1px;
     border-radius: 1px;
+    width: 370px;
+    overflow: hidden;
+    transition: transform var(--transition);
+}
+.filter-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.9);
+    transform: translatey(100%);
+    transition: transform 250ms ease-in-out;
+} 
+.filter-image:hover .overlay {
+    transform: translatey(0);
+}
+.filter-card {
+    transition: border var(--transition), box-shadow var(--transition);
 }
 .filter-card:hover,
 .filter-card:active {
@@ -576,6 +637,7 @@ address {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
     
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
 }
 .filter-card-footer {
     border-right: 1px solid #EEEEEE;
@@ -598,4 +660,47 @@ address {
     gap: 30px;
     padding: 0;
 }
+.modal {
+    position: fixed;
+    width: 100vw; 
+    height: 100vh; 
+    top: 0; 
+    left: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
     
+}
+.modal-content {
+    position: relative;
+    background-color: var(--background-white-color);
+    width: 528px;
+    height: 581px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px #00000033;
+    box-shadow: 0px 1px 1px 0px #00000024;
+    box-shadow: 0px 1px 3px 0px #0000001F;
+}
+.is-hidden {
+    visibility: hidden;
+}
+.close-btn {
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--background-white-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

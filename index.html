@@ -32,7 +32,9 @@
             <nav class="main-navigation">
               <ul>
                 <li>
-                  <a href="./index.html"><span class="current">Studio</span></a>
+                  <a href="./index.html"
+                    ><span class="after-link current">Studio</span></a
+                  >
                 </li>
                 <li><a href="./portofolio.html">Portofolio</a></li>
                 <li><a href="#">Contacts</a></li>
@@ -66,7 +68,7 @@
               EFFECTIVE SOLUTIONS FOR <br />
               YOUR BUSINESS
             </h1>
-            <button type="button" class="request-button" href="#">
+            <button data-modal-open type="button" class="request-button">
               Request our service
             </button>
           </section>
@@ -142,6 +144,7 @@
                   alt="Man typing plans from paper to computer"
                   width="370"
                 />
+                <div class="what-we-do-label"><p>DESKTOP APPS</p></div>
               </li>
 
               <li class="images">
@@ -150,6 +153,7 @@
                   alt="Man optimizing phone app from computer"
                   width="370"
                 />
+                <div class="what-we-do-label"><p>Mobile APPS</p></div>
               </li>
 
               <li class="images">
@@ -158,6 +162,7 @@
                   alt="Man choosing color palette from tablet"
                   width="370"
                 />
+                <div class="what-we-do-label"><p>DESIGN SOLUTIONS</p></div>
               </li>
             </ul>
           </div>
@@ -550,6 +555,12 @@
           </div>
         </div>
       </footer>
+    </div>
+    <!-- Request our Service Modal -->
+    <div class="modal is-hidden" data-modal>
+      <div class="modal-content">
+        <button class="close-btn" data-modal-close>&times;</button>
+      </div>
     </div>
     <script src="./js/modal.js"></script>
   </body>
