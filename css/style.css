@@ -68,9 +68,10 @@ img {
 .global-header .main-navigation ul {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     list-style-type: none;
     margin: 0;
+    gap: 60px;
 }
 .global-header .main-navigation ul li {
     padding-top: 30px;
@@ -86,12 +87,11 @@ img {
     width: 80%;
     align-items: center;
     justify-content: space-between;
-    padding-left: 90px;
 }
 .contact-container {
     display: flex;
     width: 40%;
-    justify-content:space-between;
+    justify-content:space-evenly;
     margin: 0;
     padding: 0;
 }
@@ -390,7 +390,6 @@ h3 {
     padding-left: 12px;
 }
 .regular-costumers-section {
-    width: 100%;
     background-color: var(--background-white-color);
     padding-top: 94px;
 }
@@ -405,8 +404,8 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    
+    flex-wrap: nowrap;
+    gap: 30px; 
 }
 .regular-costumers-section .regular-costumers-container 
 .regular-costumers-list .regular-costumers-item { 
@@ -415,25 +414,22 @@ h3 {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     display: block;
-    padding: 16px 32px;
     transition: border var(--transition);
 }
 .regular-costumers-section .regular-costumers-container 
 .regular-costumers-list .regular-costumers-item:hover,
 .regular-costumers-section .regular-costumers-container 
 .regular-costumers-list .regular-costumers-item:focus {
-    display: block;
     border: 1px solid rgba(33, 150, 243, 1);
     border-radius: 4px;
     cursor: pointer;
 }
 .regular-costumers-image {
-    width: 106px;
-    height: 60px;
+    width: 170px;
+    height: 92px;
     fill: #afb1b8;
     transition: fill var(--transition);
 }
-
 .regular-costumers-image:hover,
 .regular-costumers-image:focus {
     fill: var(--blue-hover-color);
